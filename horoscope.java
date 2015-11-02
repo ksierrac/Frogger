@@ -14,11 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-/**
- * This application will display the horoscope for a given birthdate.  
- * @author Sierra
- *
- */
 public class HoroscopeGenerator extends JFrame {
 
 	private JLabel instructions;
