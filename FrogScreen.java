@@ -24,8 +24,14 @@ public class FrogScreen extends JPanel implements KeyListener {
 	
 	public static int screenWidth = 575;
 	public static int screenHeight = 625;
+	
+	public static int finishLine = 25;
+	public static int startingLine = 525;
+	public static int firstLane = 66;
+	public static int lane = 42;
+	public static int median = 40;
+	
 	public static ImageIcon bgImg = new ImageIcon ("Frogger Background.png");
-	//public static ImageIcon bgImg = new ImageIcon ("withLanes.png");
 	public static ImageIcon carImg = new ImageIcon ("car.png");
 	public static ImageIcon truckImg = new ImageIcon ("truck.png");
 	public static ImageIcon frogImg = new ImageIcon ("frog.png");
@@ -40,7 +46,8 @@ public class FrogScreen extends JPanel implements KeyListener {
 	
 	public static int truckWidth = 111;	
 	public static int turtleWidth = 47;
-	public static int logWidth = 72;
+	public static int logWidth = 117;
+	public static int frogWidth = 47;
 
 	
 	private ArrayList<GameObject> gameObject;
@@ -80,14 +87,25 @@ public class FrogScreen extends JPanel implements KeyListener {
 
 				int x = screenWidth / 2;
 				int y = screenHeight / 20;
-				Frogs playerFrog = new Frogs(new Point(x, y), new Rectangle(20, 20),
-						frogImg.getImage());
+				Frogs playerFrog = new Frogs(new Point(x-40, startingLine), new Rectangle(frogWidth, obstacleHeight), obstaclePoints, frogImg.getImage());
+				Obstacles playerFrog1 = new Obstacles(new Point(x, startingLine), new Rectangle(frogWidth, obstacleHeight), obstaclePoints, frogImg.getImage());
 				playerFrog.setVector(new MyVector(0, 0));
-				playerFrog.setAngle(0);
-				gameObject.add(0, playerFrog); // always at index 0
+				gameObject.add(playerFrog); // always at index 0
+				gameObject.add(playerFrog1);
 
 		//add  Truck
-				Truck truck = new Truck(new Point(x, y), new Rectangle(
+				Obstacles car = new Obstacles(new Point(x, firstLane+lane*5+median), new Rectangle(56, obstacleHeight), obstaclePoints, carImg.getImage());
+				gameObject.add(car);
+				
+				Truck truck = new Truck(new Point(x, firstLane+lane*5+median), new Rectangle(
+						truckWidth, obstacleHeight), obstaclePoints, truckImg.getImage());
+				Truck truck1 = new Truck(new Point(x, firstLane+lane*6+median), new Rectangle(
+						truckWidth, obstacleHeight), obstaclePoints, truckImg.getImage());
+				Truck truck2 = new Truck(new Point(x, firstLane+lane*7+median), new Rectangle(
+						truckWidth, obstacleHeight), obstaclePoints, truckImg.getImage());
+				Truck truck3 = new Truck(new Point(x, firstLane+lane*8+median), new Rectangle(
+						truckWidth, obstacleHeight), obstaclePoints, truckImg.getImage());
+				Truck truck4 = new Truck(new Point(x, firstLane+lane*9+median), new Rectangle(
 						truckWidth, obstacleHeight), obstaclePoints, truckImg.getImage());
 
 				// generate trial vector
@@ -95,11 +113,15 @@ public class FrogScreen extends JPanel implements KeyListener {
 				//double b = 10 * Math.random() - 5;
 				//truck.setVector(new MyVector(a,b));
 
-				gameObject.add(truck);
+				//gameObject.add(truck);
+				gameObject.add(truck1);
+				gameObject.add(truck2);
+				gameObject.add(truck3);
+				gameObject.add(truck4);
 				
 				
 		//add Turtle
-				Turtle turtle = new Turtle(new Point(x, y), new Rectangle(
+				Turtle turtle = new Turtle(new Point(x, firstLane), new Rectangle(
 						turtleWidth, obstacleHeight), obstaclePoints, turtleImg.getImage());
 
 				// generate trial vector
@@ -110,15 +132,28 @@ public class FrogScreen extends JPanel implements KeyListener {
 				gameObject.add(turtle);
 				
 		//add Log 
-				Log log = new Log(new Point(x, y), new Rectangle(
-						logWidth, obstacleHeight), obstaclePoints, turtleImg.getImage());
+				Log log = new Log(new Point(x, firstLane), new Rectangle(
+						logWidth, obstacleHeight), obstaclePoints, logImg.getImage());
+				Log log1 = new Log(new Point(x, firstLane+lane), new Rectangle(
+						logWidth, obstacleHeight), obstaclePoints, logImg.getImage());
+				Log log2 = new Log(new Point(x, firstLane+lane*2), new Rectangle(
+						logWidth, obstacleHeight), obstaclePoints, logImg.getImage());
+				Log log3 = new Log(new Point(x, firstLane+lane*3), new Rectangle(
+						logWidth, obstacleHeight), obstaclePoints, logImg.getImage());
+				Log log4 = new Log(new Point(x, firstLane+lane*4), new Rectangle(
+						logWidth, obstacleHeight), obstaclePoints, logImg.getImage());
 
 				// generate trial vector
 				//double e = 10 * Math.random() - 5;
 				//double f = 10 * Math.random() - 5;
 				truck.setVector(new MyVector(0,0));
 
-				gameObject.add(log);
+				//gameObject.add(log);
+				gameObject.add(log1);
+				gameObject.add(log2);
+				gameObject.add(log3);
+				gameObject.add(log4);
+
 				
 				
 			}
