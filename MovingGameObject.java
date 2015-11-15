@@ -101,9 +101,27 @@ public class MovingGameObject extends GameObject {
 	public void draw(Graphics g) {
 		// reminder ... later we want to rotate image by
 		// changeX and changeY
-		
-		
+		Graphics2D g2 = (Graphics2D) g;
+		if (this instanceof Frogs) {
+			Frogs frog = (Frogs) this;
+
+			// AffineTransform identity = new AffineTransform();
+			AffineTransform trans = new AffineTransform();
+			// trans.setTransform(identity);
+			trans.translate(location.x, location.y);
+			//trans.scale(0.25, 0.25);
+
+			trans.rotate(Math.toRadians(frog.getAngle()),
+					myImage.getWidth(null) / 2, myImage.getHeight(null) / 2);
+
+			g2.drawImage(myImage, trans, null);
+		} else {
+			g2.drawImage(myImage, location.x, location.y, size.width,
+					size.height, null);
+		}
 	}
+		
+	
 
 	/**
 	 * Retrieve the vector.  
@@ -190,4 +208,3 @@ public class MovingGameObject extends GameObject {
 		this.maxAge = maxAge;
 	}
 
-}
