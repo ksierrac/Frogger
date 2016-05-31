@@ -1,3 +1,4 @@
+
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -9,20 +10,21 @@ import java.awt.Rectangle;
  * before the turtle submerges into the water.
  * When the player moves to the next lane and avoids 
  * the water, the player will receive 10 points.
- * @author Kim
+ * @author Sierra, Kim, Mitch
  *
  */
-public class Turtle extends Obstacles {
+public class Turtle extends MovingGameObject 
+{
 	/**
 	 * Create a Turtle at a particular place, with a 
 	 * particular size, a particular point value, and an image.
 	 * @param p The location.
 	 * @param s The size (width and height)
-	 * @param pv The point value
 	 * @param i The image
 	 */	
-	public Turtle(Point p, Rectangle s, int pv, Image i) {
-		super(p, s, pv, i);
+	public Turtle(Point p, Rectangle s, Image i) 
+	{
+		super(p, s, i, 0);
 	}
 
 	

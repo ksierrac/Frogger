@@ -3,27 +3,26 @@ import java.awt.Point;
 import java.awt.Rectangle;
 
 /**
- * A Truck is a  object that moves in a horizontal line.  
- * If a truck collides with the frog, it kills the frog.
- * A player can avoid the truck by moving the frog.
+ * A Car is a  object that moves in a horizontal line.  
+ * If a Car collides with the frog, it kills the frog.
+ * A player can avoid the car by moving the frog.
  * When the player moves to the next lane and avoids a 
- * truck, the player will receive 10 points. 
- * @author Kim
+ * car, the player will receive 10 points. 
+ * @author Sierra, Kim, Mitch
  *
  */
 
-public class Car extends MovingGameObject {
-
-
+public class Car extends MovingGameObject 
+{
 	/**
 	 * Create a Car at a particular place, with a 
 	 * particular size, a particular point value, and an image.
 	 * @param p The location.
 	 * @param s The size (width and height)
-	 * @param pv The point value
 	 * @param i The image
 	 */	
-	public Car(Point p, Rectangle s, Image i) {
+	public Car(Point p, Rectangle s, Image i) 
+	{
 		super(p, s, i, 0);
 		
 	}

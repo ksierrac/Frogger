@@ -1,3 +1,4 @@
+
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -8,21 +9,22 @@ import java.awt.Rectangle;
  * If it frog reaches the log, the frog will stay on the log.
  * When the player moves to the next lane and avoids 
  * the water, the player will receive 10 points.
- * @author Kim
+ * @author Sierra, Kim, Mitch
  *
  */
-public class Log extends Obstacles{
+public class Log extends MovingGameObject 
+{
 
 	/**
 	 * Create an Log at a particular place, with a 
-	 * particular size, a particular point value, and an image.
+	 * particular size, and an image.
 	 * @param p The location.
 	 * @param s The size (width and height)
-	 * @param pv The point value
-	 * @param i The image
+	 * @param i The image of a log
 	 */	
-	public Log(Point p, Rectangle s, int pv, Image i) {
-		super(p, s, pv, i);
+	public Log(Point p, Rectangle s, Image i) 
+	{
+		super(p, s, i, 0);
 	}
 
 	

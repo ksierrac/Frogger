@@ -1,3 +1,4 @@
+
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -5,11 +6,12 @@ import java.awt.Rectangle;
 
 
 /**
- * Game objects have a location.
- * @author Kim
+ * Game objects have a location and a size.
+ * @author Sierra, Kim, Mitch
  *
  */
-public abstract class GameObject {
+public abstract class GameObject 
+{
 	protected Point location;
 	protected Rectangle size;
 	
@@ -18,7 +20,8 @@ public abstract class GameObject {
 	 * @param location Starting location.
 	 * @param size Starting size.
 	 */
-	public GameObject(Point location, Rectangle size) {
+	public GameObject(Point location, Rectangle size) 
+	{
 		super();
 		this.location = location;
 		this.size = size;
@@ -28,7 +31,8 @@ public abstract class GameObject {
 	 * Retrieve the location.
 	 * @return the location
 	 */
-	public Point getLocation() {
+	public Point getLocation() 
+	{
 		return location;
 	}
 
@@ -36,7 +40,8 @@ public abstract class GameObject {
 	 * Change the location.
 	 * @param location the location to set
 	 */
-	public void setLocation(Point location) {
+	public void setLocation(Point location) 
+	{
 		this.location = location;
 	}
 
@@ -45,7 +50,8 @@ public abstract class GameObject {
 	 * Retrieve the size.
 	 * @return the size
 	 */
-	public Rectangle getSize() {
+	public Rectangle getSize() 
+	{
 		return size;
 	}
 
@@ -53,7 +59,8 @@ public abstract class GameObject {
 	 * Change the size.
 	 * @param size the size to set
 	 */
-	public void setSize(Rectangle size) {
+	public void setSize(Rectangle size) 
+	{
 		this.size = size;
 	}
 	
